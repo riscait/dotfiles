@@ -6,9 +6,8 @@ cd ~
 # Clone my dotfiles
 if [ ! -d ~/dotfiles ]
  then
-  cd ~/.ssh
-  ssh-keygen
-  pbcopy < ~/.ssh/id_rsa.pub
+  ssh-keygen -t ed25519
+  pbcopy < ~/.ssh/id_ed25519.pub
   echo "公開鍵をGitHubに登録しましたか？"
   select yn in "Yes"; do
    case $yn in
@@ -18,6 +17,12 @@ if [ ! -d ~/dotfiles ]
 
   echo "Cloning dotfiles..."
   git clone git@github.com:Riscait/dotfiles.git
+  # シンボリックファイルをホームディレクトリに作成する（https://zenn.dev/k4zu/articles/zsh-tutorial）
+  # 配置したい設定ファイルのリスト
+  dotfiles=(.zshrc .zprofile)
+  for file in "${dotfiles[@]}"; do
+    ln -svf $file ~/
+  done
  else
   echo "dotfiles already cloned."
 fi
@@ -33,8 +38,7 @@ if [ "$(uname)" == 'Darwin' ]; then
   if [ ! -f /usr/local/bin/brew ]
   then
     echo "Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-    source ~/.zshrc
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     # Install some software with Homebrew
     echo "Installing some software & library..."
     brew bundle -v --file=./dotfiles/Brewfile
