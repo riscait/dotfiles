@@ -1,6 +1,3 @@
-# Homebrew
-export PATH="/opt/homebrew/bin:$PATH"
-
 # Flutter
 # FVM (Flutter Version Management)
 export PATH="$PATH:$HOME/.pub-cache/bin"
