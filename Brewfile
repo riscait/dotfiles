@@ -23,7 +23,7 @@ brew "unixodbc"
 cask "1password"
 cask "alfred"
 cask "android-studio"
-cask "bettertouchtool"
+cask "cmd-eikana"
 cask "deepl"
 cask "Figma"
 cask "google-chrome"
@@ -38,6 +38,7 @@ mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
+mas "Magnet", id: 441258766
 mas "MindNode", id: 1289197285
 mas "Notion Web Clipper", id: 1559269364
 mas "Numbers", id: 409203825
