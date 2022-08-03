@@ -6,6 +6,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 brew "act"
 brew "automake"
+brew "cocoapods"
 brew "direnv"
 brew "fvm"
 brew "git", link: false
