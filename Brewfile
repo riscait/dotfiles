@@ -5,9 +5,11 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 brew "act"
+brew "aria2"
 brew "automake"
 brew "cocoapods"
 brew "direnv"
+brew "firebase-cli"
 brew "fvm"
 brew "git", link: false
 brew "gpg"
@@ -23,6 +25,7 @@ brew "rbenv"
 brew "ruby"
 brew "ruby@2.7"
 brew "unixodbc"
+brew "robotsandpencils/made/xcodes"
 cask "1password"
 cask "alfred"
 cask "android-studio"
@@ -47,6 +50,6 @@ mas "Notion Web Clipper", id: 1559269364
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Spark", id: 1176895641
+mas "TestFlight", id: 899247664
 mas "Transporter", id: 1450874784
 mas "Twitter", id: 1482454543
-mas "Xcode", id: 497799835

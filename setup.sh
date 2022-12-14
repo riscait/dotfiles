@@ -1,6 +1,4 @@
 #!/bin/sh
-set -e
-
 cd ~
 
 # Clone my dotfiles
@@ -21,7 +19,7 @@ if [ ! -d ~/dotfiles ]
   # 配置したい設定ファイルのリスト
   dotfiles=(.zshrc .zprofile)
   for file in "${dotfiles[@]}"; do
-    ln -svf $file ~/
+    ln -s ~dotriles/$file ~/$file
   done
  else
   echo "dotfiles already cloned."
