@@ -1,0 +1,23 @@
+[user]
+name = Ryunosuke Muramatsu
+email = muramatsu@altive.co.jp
+signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP4oIJH9i1tUPcokmKVFe1Xng9wGSpkh2cIlp2/UyL76
+[commit]
+gpgsign = true
+[gpg]
+program = /opt/homebrew/bin/gpg
+format = ssh
+[gpg "ssh"]
+program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[push]
+autoSetupRemote = true
+followTags = true
+[init]
+defaultBranch = main
+[fetch]
+prune = true
+[filter "lfs"]
+process = git-lfs filter-process
+required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
