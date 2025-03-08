@@ -1,5 +1,5 @@
-// Dart Recommended Settings: https://dartcode.org/docs/recommended-settings/
 {
+    "cSpell.enabled": false,
     // ONLY GLOBAL: Breakpointに到達した時、デバッグビューが自動的に表示される。
     "debug.openDebug": "openOnDebugBreak",
     // 保存時に自動でフォーマットを実行するなら`true`
@@ -34,7 +34,7 @@
         // 補完リストが表示されていなくても、<TAB>を押すことで`for`などのスニペットを補完できる
         "editor.tabCompletion": "onlySnippets",
         // コメントや文字列の編集時にコード補完が単語を示唆することある挙動を無効化する
-        "editor.wordBasedSuggestions": false,
+        "editor.wordBasedSuggestions": "off",
         // ファイル保存時に実行されるコードアクション
         "editor.codeActionsOnSave": [
             // インポートを整理する。
@@ -55,8 +55,8 @@
     "dart.debugSdkLibraries": false,
     // スキップしたテストをテストツリーに表示させるなら`true`.
     "dart.showSkippedTests": false,
-    // `true` の場合、pubspec.yamlを保存すると自動で pub get してくれる
-    "dart.runPubGetOnPubspecChanges": true,
+    // `always` の場合、pubspec.yamlを保存すると自動で pub get してくれる
+    "dart.runPubGetOnPubspecChanges": "always",
     // クラス名を変更するとファイル名も自動で変更される。always, prompt, never
     "dart.renameFilesWithClasses": "always",
     // エクスプローラでファイルやフォルダをドラッグ＆ドロップした時に確認を求めるなら`true`.
@@ -107,40 +107,4 @@
         "dart": false
     },
     "editor.inlineSuggest.enabled": true,
-    "cSpell.userWords": [
-        "altive",
-        "autofetch",
-        "autofocus",
-        "codecov",
-        "codegen",
-        "codeowners",
-        "concat",
-        "cupertino",
-        "dotenv",
-        "Draggable",
-        "firebaserc",
-        "firestore",
-        "gitmessage",
-        "gitmodules",
-        "Kanban",
-        "lefthook",
-        "lerp",
-        "Mockito",
-        "Muramatsu",
-        "mypage",
-        "naipaka",
-        "pascalcase",
-        "pubspec",
-        "recase",
-        "remoteconfig",
-        "RGBO",
-        "Riscait",
-        "riverpod",
-        "Ryunosuke",
-        "signin",
-        "unawaited",
-        "unfocus",
-        "vsync",
-        "xcconfig"
-    ],
 }
