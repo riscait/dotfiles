@@ -1,55 +1,68 @@
-tap "dart-lang/dart"
-tap "leoafarias/fvm"
+tap "dart-lang/dart" # for Flutter/Dart development
+tap "grishka/grishka" # for NearDrop
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-brew "act"
-brew "aria2"
+tap "leoafarias/fvm" # Flutter Version Management
+tap "robotsandpencils/made" # for xcodes
+brew "act" # Run GitHub Actions locally
+brew "actionlint" # for GitHub Actions lint
+brew "aria2" # Multi-protocol download utility
 brew "automake"
-brew "cocoapods"
-brew "direnv"
-brew "firebase-cli"
-brew "fvm"
-brew "git", link: false
-brew "gpg"
-brew "guile"
+brew "cocoapods" # for Flutter with iOS/macOS building
+brew "direnv" # Environment variable manager
+brew "gh" # GitHub CLI
+brew "git"
+brew "git-lfs" # Git extension for large files
+brew "gnu-sed" # GNU implementation of sed
+brew "p11-kit"
+brew "unbound"
 brew "gnutls"
-brew "ideviceinstaller"
-brew "libimobiledevice"
+brew "gnupg" # GNU Privacy Guard: free implementation of the OpenPGP
+brew "go" # Golang
 brew "libtool"
-brew "mas"
-brew "pinentry-mac"
-brew "ruby-build"
-brew "rbenv"
-brew "ruby"
-brew "ruby@2.7"
-brew "unixodbc"
-brew "robotsandpencils/made/xcodes"
-cask "1password"
-cask "alfred"
-cask "android-studio"
-cask "cmd-eikana"
-cask "deepl"
-cask "Figma"
-cask "google-chrome"
-cask "kindle"
-cask "notion"
-cask "slack"
-cask "tower"
-cask "visual-studio-code"
-cask "zoom"
-mas "Bear", id: 1091189122
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "LINE", id: 539883307
-mas "Magnet", id: 441258766
-mas "MindNode", id: 1289197285
-mas "Notion Web Clipper", id: 1559269364
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Spark", id: 1176895641
+brew "guile"
+brew "harfbuzz"
+brew "hugo" # Static site generator with Golang
+brew "libimobiledevice"
+brew "ideviceinstaller"
+brew "libfido2"
+brew "mas" # Mac App Store command-line interface
+brew "mysql"
+brew "node" # Node.js JavaScript runtime
+brew "openapi-generator" # Generate clients, servers from OpenAPI spec
+brew "openjdk" # Java development kit
+brew "pinentry-mac" # Pinentry for GPG on Mac
+brew "postgresql@15" # Object-relational database system
+brew "python@3.11" # Python programming language
+brew "ruby-build" # Install various Ruby versions
+brew "rbenv" # Ruby version manager
+brew "ruby@3.1" # Ruby programming language
+brew "tree" # Display directories as trees
+brew "unixodbc" # ODBC API for Unix
+brew "leoafarias/fvm/fvm" # Flutter Version Management
+brew "robotsandpencils/made/xcodes" # Xcode installation manager
+cask "1password" # Password manager
+cask "1password-cli" # Command-line interface for 1Password
+cask "android-studio" # IDE for Android development
+cask "arc" # Web browser
+cask "blender" # 3D creation suite
+cask "canva" # Graphic design platform
+cask "cleanshot" # Screen capture and recording tool
+cask "cmd-eikana" # Japanese input switcher (⌘英かな)
+cask "deskpad" # Menubar notepad
+cask "discord" # Voice and text chat software
+cask "figma" # Collaborative interface design tool
+cask "font-monaspace" # Coding font family from GitHub
+cask "google-chrome" # Web browser
+cask "kindle" # E-book reader
+cask "neardrop" # AirDrop alternative for non-Apple devices
+cask "notion" # Note-taking and collaboration
+cask "raycast" # Productivity and launcher tool
+cask "slack" # Team communication and collaboration
+cask "tower" # Git client
+cask "warp" # alternative terminal
+cask "zoom" # Video communication and meeting platform
+mas "1Password for Safari", id: 1569813296
+mas "DaisyDisk", id: 411643860
+mas "Developer", id: 640199958
+mas "Kindle", id: 302584613
 mas "TestFlight", id: 899247664
-mas "Transporter", id: 1450874784
-mas "Twitter", id: 1482454543
