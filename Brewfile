@@ -26,16 +26,11 @@ brew "libimobiledevice"
 brew "ideviceinstaller"
 brew "libfido2"
 brew "mas" # Mac App Store command-line interface
-brew "mysql"
 brew "node" # Node.js JavaScript runtime
 brew "openapi-generator" # Generate clients, servers from OpenAPI spec
 brew "openjdk" # Java development kit
 brew "pinentry-mac" # Pinentry for GPG on Mac
-brew "postgresql@15" # Object-relational database system
-brew "python@3.11" # Python programming language
-brew "ruby-build" # Install various Ruby versions
-brew "rbenv" # Ruby version manager
-brew "ruby@3.1" # Ruby programming language
+brew "ruby" # Ruby (latest version)
 brew "tree" # Display directories as trees
 brew "fvm" # Flutter Version Management
 brew "xcodes" # Xcode installation manager
