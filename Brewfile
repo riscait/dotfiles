@@ -7,7 +7,7 @@ brew "act" # Run GitHub Actions locally
 brew "actionlint" # for GitHub Actions lint
 brew "aria2" # Multi-protocol download utility
 brew "automake"
-# brew "cocoapods" # for Flutter with iOS/macOS building
+brew "cocoapods" # for Flutter with iOS/macOS building
 brew "direnv" # Environment variable manager
 brew "gh" # GitHub CLI
 brew "git"
@@ -30,7 +30,7 @@ brew "node" # Node.js JavaScript runtime
 brew "openapi-generator" # Generate clients, servers from OpenAPI spec
 brew "openjdk" # Java development kit
 brew "pinentry-mac" # Pinentry for GPG on Mac
-brew "ruby" # Ruby (latest version)
+brew "ruby" # Ruby (for cocoapods)
 brew "tree" # Display directories as trees
 brew "fvm" # Flutter Version Management
 brew "xcodes" # Xcode installation manager

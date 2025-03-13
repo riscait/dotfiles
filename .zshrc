@@ -18,7 +18,7 @@ eval "$(direnv hook $SHELL)"
 # Ruby by Homebrew（MacのデフォルトRutyではバージョンが低すぎる）
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
-# Homebrew / Cocoapods
+# Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 
 # gpg
