@@ -1,9 +1,6 @@
 # use gnu sed
 alias sed="gsed"
 
-# global Flutter SDK by FVM
-export PATH="$PATH:$HOME/fvm/default/bin"
-
 # Melos
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
@@ -14,9 +11,12 @@ export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
 export EDITOR=vi
 eval "$(direnv hook $SHELL)"
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# rbenv（Rubyは単一バージョンの使用で耐えるか試験中）
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+
+# Ruby by Homebrew（MacのデフォルトRutyではバージョンが低すぎる）
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # Homebrew / Cocoapods
 export PATH="/opt/homebrew/bin:$PATH"
