@@ -7,7 +7,7 @@ brew "act" # Run GitHub Actions locally
 brew "actionlint" # for GitHub Actions lint
 brew "aria2" # Multi-protocol download utility
 brew "automake"
-brew "cocoapods" # for Flutter with iOS/macOS building
+# brew "cocoapods" # for Flutter with iOS/macOS building
 brew "direnv" # Environment variable manager
 brew "gh" # GitHub CLI
 brew "git"
@@ -37,18 +37,16 @@ brew "ruby-build" # Install various Ruby versions
 brew "rbenv" # Ruby version manager
 brew "ruby@3.1" # Ruby programming language
 brew "tree" # Display directories as trees
-brew "unixodbc" # ODBC API for Unix
-brew "leoafarias/fvm/fvm" # Flutter Version Management
-brew "robotsandpencils/made/xcodes" # Xcode installation manager
+brew "fvm" # Flutter Version Management
+brew "xcodes" # Xcode installation manager
 cask "1password" # Password manager
 cask "1password-cli" # Command-line interface for 1Password
 cask "android-studio" # IDE for Android development
 cask "arc" # Web browser
-cask "blender" # 3D creation suite
-cask "canva" # Graphic design platform
 cask "cleanshot" # Screen capture and recording tool
 cask "cmd-eikana" # Japanese input switcher (⌘英かな)
-cask "deskpad" # Menubar notepad
+cask "cursor" # Code editor with AI
+cask "deskpad" # A virtual monitor for screen sharing
 cask "discord" # Voice and text chat software
 cask "figma" # Collaborative interface design tool
 cask "font-monaspace" # Coding font family from GitHub
@@ -58,7 +56,6 @@ cask "neardrop" # AirDrop alternative for non-Apple devices
 cask "notion" # Note-taking and collaboration
 cask "raycast" # Productivity and launcher tool
 cask "slack" # Team communication and collaboration
-cask "tower" # Git client
 cask "warp" # alternative terminal
 cask "zoom" # Video communication and meeting platform
 mas "1Password for Safari", id: 1569813296
