@@ -32,6 +32,24 @@ if [ "$(uname)" == 'Darwin' ]; then
   defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
   defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
+  # タップでクリック（1本指でタップ）
+  defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+  defaults -currentHost write -globalDomain com.apple.mouse.tapBehavior -int 1
+
+  # スペルの自動修正をOFFにする
+  defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+
+  # Dock
+  # に初期表示されているアプリをすべて削除
+  defaults write com.apple.dock persistent-apps -array
+  # 自動非表示ON
+  defaults write com.apple.dock autohide -bool true
+  killall Dock
+
+
+  # プリファレンスのキャッシュ更新。これで反映されないなら再起動か再ログインを試す
+  killall cfprefsd
   # SystemUIServerを再起動して設定を反映させる
   killall SystemUIServer
 
@@ -39,6 +57,7 @@ if [ "$(uname)" == 'Darwin' ]; then
     # Homebrewをインストールする
     echo "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    source ~/.zshrc
     # Homebrewで管理しているパッケージをインストールする
     echo "Installing some software & library..."
     brew bundle --verbose --file="$HOME/dotfiles/Brewfile"
