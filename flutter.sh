@@ -20,7 +20,7 @@ set -e
 echo "=== Flutter SDKインストールスクリプト ==="
 echo "このスクリプトはmacOS用の最新の安定版Flutter SDKをインストールします"
 
-# ホームディレクトリにFlutterをインストールするディレクトリを作成
+# 公式ドキュメントにならい、ホームディレクトリにFlutterをインストールするディレクトリを作成
 FLUTTER_PARENT_DIR="$HOME/development"
 FLUTTER_SDK_DIR="$FLUTTER_PARENT_DIR/flutter"
 TMP_DIR=$(mktemp -d)
@@ -33,23 +33,32 @@ else
     echo "✅ Homebrewはすでにインストールされています"
 fi
 
-# Xcodeのインストール確認とインストール
-# xcodesがインストールされているか確認し、なければインストール
+# Xcodesのインストール確認とインストール
 if ! command -v xcodes &>/dev/null; then
     echo "xcodesをインストールしています..."
-    brew install robotsandpencils/made/xcodes
+    brew install robotsandpencils/made/xcodes aria2
+else
+    echo "✅ Xcodesはすでにインストールされています"
 fi
 
-# Xcodeがインストールされているか確認
-if ! xcode-select -p &>/dev/null; then
-    echo "Xcodeがインストールされていません。最新の安定版Xcodeをインストールしています..."
-    xcodes install --latest
-    sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
-    sudo xcodebuild -runFirstLaunch
-    sudo xcodebuild -license accept
-else
-    echo "✅ Xcodeはすでにインストールされています"
-fi
+# xcode-selectが使えるか確認
+# if ! xcode-select -p &>/dev/null; then
+#     echo "xcode-selectが使用できません。最新の安定版Xcodeをインストールしています..."
+#     xcodes install --latest aria2
+#     sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+#     sudo xcodebuild -runFirstLaunch
+#     sudo xcodebuild -license accept
+# else
+#     echo "✅ xcode-selectはすでに使用可能です"
+# fi
+
+echo "最新のXcodeをインストールします"
+xcodes install --latest aria2
+sudo xcode-select --switch /Applications/Xcode-16.2.0.app/Contents/Developer
+sudo xcodebuild -runFirstLaunch
+sudo xcodebuild -license accept
+xcodebuild -downloadPlatform iOS
+echo "✅ Xcodeのインストールが完了しました"
 
 # gitがインストールされているか確認
 if ! command -v git &>/dev/null; then
@@ -83,21 +92,21 @@ git clone -b stable https://github.com/flutter/flutter.git "$FLUTTER_SDK_DIR"
 # PATH環境変数を更新
 echo "環境変数を設定しています..."
 
-# .zshrcファイルのパス
-ZSHRC="$HOME/.zshrc"
+# .zshenvファイルのパス
+ZSHENV="$HOME/.zshenv"
 
-# すでにflutterへのパスが.zshrcに追加されているか確認
-if grep -q "export PATH=.*flutter/bin" "$ZSHRC"; then
+# すでにflutterへのパスが.zshenvに追加されているか確認
+if grep -q "export PATH=.*flutter/bin" "$ZSHENV"; then
     echo "✅ PATHはすでに設定されています"
 else
     echo "PATHに Flutter/bin を追加しています..."
-    echo '' >>"$ZSHRC"
-    echo '# Flutter SDKのパス' >>"$ZSHRC"
-    echo 'export PATH="$PATH:'$FLUTTER_SDK_DIR'/bin"' >>"$ZSHRC"
+    echo '' >>"$ZSHENV"
+    echo '# Flutter SDKのパス' >>"$ZSHENV"
+    echo 'export PATH="$PATH:'$FLUTTER_SDK_DIR'/bin"' >>"$ZSHENV"
 fi
 
-# 現在のシェルに適用
-export PATH="$PATH:$FLUTTER_SDK_DIR/bin"
+# 環境変数を適用
+source $ZSHENV
 
 echo "Flutter SDKをプリコンパイルしています..."
 "$FLUTTER_SDK_DIR/bin/flutter" precache
@@ -108,7 +117,7 @@ echo "Flutter doctorを実行して依存関係を確認しています..."
 # CocoaPodsのインストールを確認
 if ! command -v pod &>/dev/null; then
     echo "CocoaPodsをインストールしています..."
-    sudo gem install cocoapods
+    brew install cocoapods
 else
     echo "✅ CocoaPodsはすでにインストールされています"
 fi
@@ -118,9 +127,6 @@ echo "=== Flutter SDKのインストールが完了しました ==="
 echo "Flutter SDK場所: $FLUTTER_SDK_DIR"
 echo ""
 echo "次のステップ:"
-echo "1. 新しいターミナルを開くか、以下のコマンドを実行して環境変数を適用してください:"
-echo "   source $ZSHRC"
-echo "2. 'flutter doctor' を実行して、残りの依存関係を確認し、すべてのチェックマークが付いていることを確認してください"
-echo "3. 'flutter create my_app' を実行して最初のFlutterアプリを作成してください"
+echo "1. 'flutter doctor -v' を実行して、残りの依存関係を確認し、すべてのチェックマークが付いていることを確認してください"
 echo ""
-echo "ハッピーFlutterコーディング！"
+echo "Happy Flutter Coding!"
