@@ -1,6 +1,3 @@
-# use gnu sed
-alias sed="gsed"
-
 # Melos
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
@@ -18,9 +15,6 @@ eval "$(direnv hook $SHELL)"
 # Ruby by Homebrew（MacのデフォルトRutyではバージョンが低すぎる）
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
-# Homebrew
-export PATH="/opt/homebrew/bin:$PATH"
-
 # gpg
 export GPG_TTY=$(tty)
 
@@ -35,9 +29,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # GitHub CLI
 eval "$(gh completion -s zsh)"
-
-# PostgreSQL
-export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 # 1Password SSH key
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
@@ -54,3 +45,6 @@ if [ -f '/Users/riscait/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/r
 # Git alias
 alias gpro="git pull --rebase origin"
 alias gpfwl="git push --force-with-lease"
+
+# Misc alias
+alias sed="gsed"
