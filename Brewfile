@@ -31,6 +31,7 @@ brew "openapi-generator" # Generate clients, servers from OpenAPI spec
 brew "openjdk" # Java development kit
 brew "pinentry-mac" # Pinentry for GPG on Mac
 brew "ruby" # Ruby (for cocoapods)
+brew "timing" # Automatic time and productivity tracking app
 brew "tree" # Display directories as trees
 brew "fvm" # Flutter Version Management
 brew "xcodes" # Xcode installation manager
