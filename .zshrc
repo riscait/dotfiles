@@ -1,3 +1,7 @@
+# Zshの補完機能を初期化 (Completionで使用する)
+autoload -Uz compinit
+compinit
+
 # Melos
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
@@ -30,8 +34,8 @@ export NVM_DIR="$HOME/.nvm"
 # GitHub CLI
 eval "$(gh completion -s zsh)"
 
-# 1Password SSH key
-export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+# 1Password SSH key（なくても問題なさそう）
+# export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
 # Go
 export PATH="$HOME/go/bin:$PATH"
