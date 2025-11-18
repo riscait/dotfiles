@@ -53,6 +53,11 @@ if [ "$(uname)" == 'Darwin' ]; then
   # SystemUIServerを再起動して設定を反映させる
   killall SystemUIServer
 
+  # Apple Musicの自動起動を無効化
+  launchctl disable gui/"$(id -u)"/com.apple.rcd
+  launchctl kill SIGTERM gui/"$(id -u)"/com.apple.rcd
+
+
   if [ ! -f /usr/local/bin/brew ]; then
     # Homebrewをインストールする
     echo "Installing Homebrew..."
