@@ -124,9 +124,9 @@ fi
 
 echo ""
 echo "=== Flutter SDKのインストールが完了しました ==="
-echo "Flutter SDK場所: $FLUTTER_SDK_DIR"
+echo "Flutter SDK: $FLUTTER_SDK_DIR"
 echo ""
-echo "次のステップ:"
-echo "1. 'flutter doctor -v' を実行して、残りの依存関係を確認し、すべてのチェックマークが付いていることを確認してください"
+echo "'flutter doctor -v' を実行して、残りの依存関係を確認し、すべてのチェックマークが付いていることを確認してください"
 echo ""
-echo "Happy Flutter Coding!"
+
+dart pub global activate melos
