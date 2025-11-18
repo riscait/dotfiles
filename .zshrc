@@ -23,8 +23,8 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export GPG_TTY=$(tty)
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
@@ -34,17 +34,8 @@ export NVM_DIR="$HOME/.nvm"
 # GitHub CLI
 eval "$(gh completion -s zsh)"
 
-# 1Password SSH key（なくても問題なさそう）
-# export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
-
 # Go
 export PATH="$HOME/go/bin:$PATH"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/riscait/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/riscait/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/riscait/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/riscait/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Git alias
 alias gpro="git pull --rebase origin"
@@ -52,3 +43,18 @@ alias gpfwl="git push --force-with-lease"
 
 # Misc alias
 alias sed="gsed"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/riscait/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/riscait/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/riscait/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/riscait/google-cloud-sdk/completion.zsh.inc'; fi
+
+## Java Home
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Bun
+export PATH="$HOME/.bun/bin:$PATH"
